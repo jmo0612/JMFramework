@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="JMView">
+        <attr name="fontTTF" format="string" />
+        <attr name="text" format="string" />
+        <attr name="icon" format="reference" />
+        <attr name="bg" format="reference" />
+        <attr name="format">
+            <enum name="JM_NUMBER" value="0"  />
+            <enum name="JM_MONEY_RUPIAH" value="1"/>
+            <enum name="JM_DATE_STANDARD" value="2"/>
+            <enum name="JM_DATE_SHORT" value="3"/>
+            <enum name="JM_DATE_MEDIUM" value="4"/>
+            <enum name="JM_DATE_MEDIUM_COMPLETE" value="5"/>
+            <enum name="JM_DATE_LONG" value="6"/>
+            <enum name="JM_DATE_LONG_COMPLETE" value="7"/>
+            <enum name="JM_DATETIME_STANDARD" value="8"/>
+            <enum name="JM_DATETIME_SHORT" value="9"/>
+            <enum name="JM_DATETIME_MEDIUM" value="10"/>
+            <enum name="JM_DATETIME_MEDIUM_COMPLETE" value="11"/>
+            <enum name="JM_DATETIME_LONG" value="12"/>
+            <enum name="JM_DATETIME_LONG_COMPLETE" value="13"/>
+        </attr>
+        <attr name="dataType" >
+            <enum name="JM_STRING" value="0"/>
+            <enum name="JM_INT" value="1"/>
+            <enum name="JM_DOUBLE" value="2"/>
+            <enum name="JM_OBJECT" value="3"/>
+            <enum name="JM_BOOLEAN" value="10"/>
+            <enum name="JM_DATE" value="11"/>
+            <enum name="JM_DATETIME" value="12"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="JMEditText">
+        <attr name="isDate" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="JMImageFrame">
+        <attr name="srcImg" format="reference" />
+        <attr name="defImg" format="reference" />
+        <attr name="maskImg" format="reference" />
+        <attr name="frontImg" format="reference" />
+    </declare-styleable>
+
+</resources>
