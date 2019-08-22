@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">JM Framework</string>
+
+    <string name="err_date_msg">ERROR TANGGAL (Tgl/Bln/Thn). Cth: </string>
 </resources>

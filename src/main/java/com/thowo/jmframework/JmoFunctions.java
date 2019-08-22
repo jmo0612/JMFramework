@@ -1,11 +1,12 @@
 package com.thowo.jmframework;
 
-import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Parcelable;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.obsez.android.lib.filechooser.ChooserDialog;
 import com.thowo.jmframework.component.JMActivity;
 import com.thowo.jmframework.db.ServerConnectionSetting;
 import com.thowo.jmframework.db.jmoConnection;
@@ -50,17 +50,18 @@ public class JmoFunctions {
         return Calendar.getInstance().get(calenderField);
     }
 
-    public static void toast(String msg){
+    public static void toast(int strRes){
+        Toast.makeText(getCurrentContext(),getCurrentContext().getText(strRes),Toast.LENGTH_LONG).show();
+    }
+
+    public static void toastTest(String msg){
         Toast.makeText(getCurrentContext(),msg,Toast.LENGTH_LONG).show();
     }
 
-    public static void displayTitle(String title){
-        String tmp= getCurrentActivity().getString(R.string.app_name);
-        if(!title.equals("")){
-            tmp+=" - "+title;
-        }
-        getCurrentActivity().setTitle(tmp);
+    public static Drawable getDrawable(int resId){
+        return ContextCompat.getDrawable(getCurrentContext(), resId);
     }
+
 
     public static void showActivity(Class cls){
         Intent intent=new Intent(getCurrentActivity().getApplicationContext(),cls);

@@ -34,7 +34,7 @@ public class JMVerticalButton extends LinearLayout {
 
     private boolean locked;
     private OnClickListener onClickListener;
-    private ColorStateList txtColor;
+    private int txtColor;
 
     private TextView tv;
     private ImageView iv;
@@ -43,7 +43,8 @@ public class JMVerticalButton extends LinearLayout {
         super(context, attrs);
         View.inflate(context,R.layout.vertical_button,this);
 
-        tv=(TextView) findViewById(R.id.captionVB);
+        tv=findViewById(R.id.captionVB);
+        txtColor=tv.getCurrentTextColor();
 
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.JMView);
@@ -67,7 +68,7 @@ public class JMVerticalButton extends LinearLayout {
                     dataType=typedArray.getInt(attr,0);
                     displayText(null,-1);
                 }else if(attr == R.styleable.JMView_icon) {
-                    iv=(ImageView)findViewById(R.id.topIconVB);
+                    iv=findViewById(R.id.topIconVB);
                     Drawable dr=typedArray.getDrawable(attr);
                     iv.setImageDrawable(dr);
                 }
@@ -90,7 +91,7 @@ public class JMVerticalButton extends LinearLayout {
     }
 
     public void setMyOnClickedListener(View.OnClickListener listener){
-        ImageView clickArea=(ImageView)findViewById(R.id.clickAreaVB);
+        ImageView clickArea=findViewById(R.id.clickAreaVB);
         clickArea.setOnClickListener(listener);
         this.onClickListener=listener;
     }
@@ -105,18 +106,17 @@ public class JMVerticalButton extends LinearLayout {
 
     public void lock(){
         this.locked=true;
-        ImageView clickArea=(ImageView)findViewById(R.id.clickAreaVB);
+        ImageView clickArea=findViewById(R.id.clickAreaVB);
         clickArea.setOnClickListener(null);
         clickArea.setEnabled(false);
         iv.setColorFilter(Color.argb(230,100,100,100));
         clickArea.setEnabled(false);
-        txtColor=tv.getTextColors();
         tv.setTextColor(Color.rgb(100,100,100));
     }
 
     public void unlock(){
         this.locked=false;
-        ImageView clickArea=(ImageView)findViewById(R.id.clickAreaVB);
+        ImageView clickArea=findViewById(R.id.clickAreaVB);
         clickArea.setOnClickListener(this.onClickListener);
         clickArea.setEnabled(true);
         iv.setColorFilter(null);

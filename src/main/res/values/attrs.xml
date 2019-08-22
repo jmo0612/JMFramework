@@ -33,6 +33,7 @@
     </declare-styleable>
     <declare-styleable name="JMEditText">
         <attr name="isDate" format="boolean" />
+        <attr name="dateErrorMsg" format="string"/>
     </declare-styleable>
     <declare-styleable name="JMImageFrame">
         <attr name="srcImg" format="reference" />

@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.thowo.jmframework.JmoFunctions;
 import com.thowo.jmframework.R;
 import com.thowo.jmframework.db.TextViewFiller;
 
@@ -32,6 +33,7 @@ public class JMEditText extends AppCompatEditText {
     private String format;
     private int dataType;
     private String font;
+    private String dateErrMsg;
 
     public JMEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -48,6 +50,8 @@ public class JMEditText extends AppCompatEditText {
                 if(attr == R.styleable.JMEditText_isDate) {
                     isDate=typedArray.getBoolean(attr, false);
                     setAsDate();
+                }else if(attr == R.styleable.JMEditText_dateErrorMsg) {
+                    dateErrMsg=typedArray.getString(attr);
                 }else if(attr == R.styleable.JMView_text) {
                     value=typedArray.getString(attr);
                     displayText(null,-1);
@@ -176,7 +180,7 @@ public class JMEditText extends AppCompatEditText {
                 boolean isValid=isThisDateValid(workingStr,"dd/MM/yyyy");
 
                 if (!isValid) {
-                    setError("ERROR TANGGAL (Tgl/Bln/Thn). Cth: " + android.text.format.DateFormat.format("dd/MM/yyyy", Calendar.getInstance().getTime()));
+                    setError(dateErrMsg + android.text.format.DateFormat.format("dd/MM/yyyy", Calendar.getInstance().getTime()));
                 } else {
                     setError(null);
                 }
