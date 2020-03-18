@@ -8,7 +8,7 @@ import android.graphics.YuvImage;
 import android.media.Image;
 import android.nfc.FormatException;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;

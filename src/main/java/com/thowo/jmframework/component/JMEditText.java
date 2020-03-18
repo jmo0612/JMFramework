@@ -3,17 +3,12 @@ package com.thowo.jmframework.component;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
-import android.support.v4.view.MarginLayoutParamsCompat;
-import android.support.v7.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatEditText;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.thowo.jmframework.JmoFunctions;
 import com.thowo.jmframework.R;
 import com.thowo.jmframework.db.TextViewFiller;
 

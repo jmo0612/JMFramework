@@ -19,7 +19,7 @@ package com.thowo.jmframework.camera2basic;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.TextureView;

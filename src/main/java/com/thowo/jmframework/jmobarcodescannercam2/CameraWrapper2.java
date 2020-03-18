@@ -2,7 +2,7 @@ package com.thowo.jmframework.jmobarcodescannercam2;
 
 
 import android.hardware.camera2.CameraDevice;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 public class CameraWrapper2 {
     public final CameraDevice mCamera;

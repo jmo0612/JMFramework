@@ -1,19 +1,16 @@
 package com.thowo.jmframework.component;
 
 import android.content.DialogInterface;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.LinearLayout;
 
 import com.thowo.jmframework.JmoFunctions;
@@ -84,7 +81,7 @@ public class JMActivity extends AppCompatActivity{
     }
 
     public void confirmExit(final String title, final String msg, final Drawable resIcon, final String positive, final String negative, DialogInterface.OnClickListener onClickListener){
-        new android.support.v7.app.AlertDialog.Builder(new ContextThemeWrapper(this,R.style.Theme_AppCompat_Dialog_Alert))
+        new androidx.appcompat.app.AlertDialog.Builder(new ContextThemeWrapper(this,R.style.Theme_AppCompat_Dialog_Alert))
                 .setTitle(title)
                 .setMessage(msg)
                 .setIcon(resIcon)
